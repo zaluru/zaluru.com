@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "404"
+---
+<BaseLayout pageTitle={pageTitle}>
+    <div class="text-center flex flex-col py-6">
+    	<h1 class="text-8xl font-extrabold">404</h1>
+        <h2 class="text-4xl pt-6">We couldn't find the page<br>you were looking for ;&lt</h2>
+        <a href="/" class="text-4xl font-extrabold pt-6 underline hover:no-underline">Return Home</a>
+        <a href="/" class="text-4xl font-extrabold pt-4 underline hover:no-underline">Check git history</a>
+    </div>
+</BaseLayout>
