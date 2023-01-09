@@ -1,0 +1,23 @@
+---
+const navItems = [
+    {href: "/about", label: "About", pushRight: false},
+    {href: "/blog", label: "Blog", pushRight: false},
+    {href: "/git", label: "Projects", pushRight: false},
+    {href: "/videos", label: "Videos", pushRight: false},
+    {href: "/music", label: "Music", pushRight: false},
+    {href: "/rss", label: "Rss", pushRight: false},
+    {href: "/language", label: "Language", pushRight: true},
+]
+---
+<ul class="flex flex-col md:flex md:flex-row">
+    {navItems.map((item) => 
+        <li class={`pt-4 md:pt-0 md:first:border-l-0 md:first:pl-0 md:last:pr-0 md:border-l-2 border-stone-900 dark:border-stone-200 md:px-4 font-bold ${item.pushRight ? ' md:border-l-0 md:ml-auto': ''}`}>
+            <a href={item.href}>{item.label}</a>
+        </li>
+    )}
+    <li class="pt-4 md:pt-0 md:first:border-l-0 md:first:pl-0 md:last:pr-0 md:border-l-2 border-stone-900 dark:border-stone-200 md:px-4 font-bold">
+        <button id="theme-toggle" onclick="themeTogglePress()" title="Toggle light & dark theme" aria-label="auto" aria-live="polite" >
+            Theme
+        </button>
+    </li>
+</ul>
