@@ -1,7 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Social from '../components/Social.astro';
+import WorkInProgress from '../components/WorkInProgress.astro';
 const pageTitle = "Home Page"
 ---
 <BaseLayout pageTitle={pageTitle}>
-	<h2>WIP</h2>
+	<h1>About me</h1>
+	<p></p>
+	<h1>Contact</h1>
+	<ul class="list-disc pl-4">
+		<Social />
+	</ul>
+    <WorkInProgress />
 </BaseLayout>
