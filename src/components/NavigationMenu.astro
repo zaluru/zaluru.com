@@ -1,20 +1,29 @@
 ---
-const navItems = [
-    {href: "/about", label: "About", pushRight: false},
-    {href: "/blog", label: "Blog", pushRight: false},
-    {href: "/git", label: "Projects", pushRight: false},
-    {href: "/videos", label: "Videos", pushRight: false},
-    {href: "/music", label: "Music", pushRight: false},
-    {href: "/rss", label: "Rss", pushRight: false},
-    {href: "/language", label: "Language", pushRight: true},
+const navItemsLeft = [
+    {href: "/about", label: "About"},
+    {href: "/projects", label: "Projects"},
+    {href: "/posts", label: "Posts"},
+    {href: "/git", label: "Git"},
+    {href: "/videos", label: "Videos"},
+    {href: "/music", label: "Music"},
+    {href: "/rss", label: "Rss"}
 ]
 ---
 <ul class="flex flex-col md:flex md:flex-row">
-    {navItems.map((item) => 
-        <li class={`pt-4 md:pt-0 md:first:border-l-0 md:first:pl-0 md:last:pr-0 md:border-l-2 border-stone-900 dark:border-stone-200 md:px-4 font-bold ${item.pushRight ? ' md:border-l-0 md:ml-auto': ''}`}>
+    {navItemsLeft.map((item) => 
+        <li class={`pt-4 md:pt-0 md:first:border-l-0 md:first:pl-0 md:last:pr-0 md:border-l-2 border-stone-900 dark:border-stone-200 md:px-4 font-bold`}>
             <a href={item.href}>{item.label}</a>
         </li>
     )}
+    <li class="pt-4 md:pt-0 md:first:border-l-0 md:first:pl-0 md:last:pr-0 border-stone-900 dark:border-stone-200 md:px-4 font-bold md:border-l-0 md:ml-auto">
+        <details>
+            <summary>Language</summary>
+            <ul class="absolute p-2 bg-stone-200 dark:bg-stone-900 border-b-2 border-stone-900 dark:border-stone-200">
+                <li class="p-2"><a href="">English</a></li>
+                <li class="p-2"><a href="">Polski</a></li>
+            </ul>
+        </details>
+    </li>
     <li class="pt-4 md:pt-0 md:first:border-l-0 md:first:pl-0 md:last:pr-0 md:border-l-2 border-stone-900 dark:border-stone-200 md:px-4 font-bold">
         <button id="theme-toggle" onclick="themeTogglePress()" title="Toggle light & dark theme" aria-label="auto" aria-live="polite" >
             Theme
