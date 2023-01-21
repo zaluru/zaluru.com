@@ -1,0 +1,38 @@
+---
+import WorkInProgress from '../../components/WorkInProgress.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const pageTitle = "Projects"
+---
+<BaseLayout pageTitle={pageTitle}>
+    <p class="my-5">All my projects can be found on my <a href="https://github.com/zaluru">GitHub</a>.</p>
+    <p class="my-5">Some of them are highlighted below:</p>
+    <h1><a href="https://zaluru.com/projects/guix-cloud-bootstrap">Guix cloud bootstrap</a></h1>
+    <h1><a href="https://zaluru.com/projects/ostree-workstation">OSTree workstation</a></h1>
+    <p class="my-5">Experimentation with a immutable system based on fedora and bootstraped from a Container.</p>
+    <p class="my-5">It consist of three repos</p>
+    <ul class="list-disc pl-4">
+        <li class="mt-5">
+            <a>ostree-base</a>
+        </li>
+        <li class="mt-5">
+            <a>ostree-workstation</a>
+        </li>
+        <li class="mt-5">
+            <a>ostree-workstation-playbook</a>
+            <p>Configures the image with ansible</p>
+        </li>
+    </ul>
+    <WorkInProgress />
+</BaseLayout>
+<style>
+    h1 {
+        @apply text-xl font-bold my-5   
+    }
+
+    h2 {
+        @apply text-lg font-bold my-5
+    }
+    a {
+        @apply underline hover:no-underline
+    }
+</style>
