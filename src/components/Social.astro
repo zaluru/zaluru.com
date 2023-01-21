@@ -1,13 +1,13 @@
 ---
 const { platform, username } = Astro.props;
+const social = [
+  {href: "https://codeberg.org/zaluru", platform: "Codeberg", label: "codeberg.org/zaluru"},
+  {href: "https://gitlab.com/zaluru", platform: "GitLab", label: "gitlab.com/zaluru"},
+  {href: "https://github.com/zaluru", platform: "GitHub", label: "github.com/zaluru"},
+] 
 ---
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
-
-<style>
-    a {
-      padding: 0.5rem 1rem;
-      color: white;
-      background-color: #4c1d95;
-      text-decoration: none;
-    }
-</style>
+{social.map((item) => 
+  <li>
+    {item.platform}: <a class="underline hover:no-underline" href={item.href}>{item.label}</a>
+  </li>
+)}
