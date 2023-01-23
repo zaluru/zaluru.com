@@ -4,25 +4,30 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const pageTitle = "Projects"
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <p class="my-5">All my projects can be found on my <a href="https://github.com/zaluru">GitHub</a>.</p>
-    <p class="my-5">Some of them are highlighted below:</p>
-    <h1><a href="https://zaluru.com/projects/guix-cloud-bootstrap">Guix cloud bootstrap</a></h1>
+    <p>You can find all my projects on my <a href="https://github.com/zaluru">GitHub</a>.</p>
+    <p>Some of them are highlighted below:</p>
+    <h1><a href="https://github.com/zaluru/guix-cloud-bootstrap">Guix cloud bootstrap</a></h1>
+    <p>Guix is not currently a popular distribution in the cloud. Getting a server up and running with it can be a difficult task and varies greatly from cloud provider to cloud provider.</p>
+    <p>This project aims to simplify this with an Ansible playbook that bootstraps a Guix-based minimal server with as little interaction as possible.</p>
     <h1><a href="https://zaluru.com/projects/ostree-workstation">OSTree workstation</a></h1>
-    <p class="my-5">Experimentation with a immutable system based on fedora and bootstraped from a Container.</p>
-    <p class="my-5">It consist of three repos</p>
+    <p>Experiment with an immutable system based on Fedora and bootstrapped from a container.</p>
+    <p>It consist of three repos</p>
     <ul class="list-disc pl-4">
         <li class="mt-5">
-            <a>ostree-base</a>
+            <a href="https://github.com/zaluru/ostree-base">ostree-base</a>
         </li>
         <li class="mt-5">
-            <a>ostree-workstation</a>
+            <a href="https://github.com/zaluru/ostree-workstation">ostree-workstation</a>
         </li>
         <li class="mt-5">
-            <a>ostree-workstation-playbook</a>
-            <p>Configures the image with ansible</p>
+            <a href="https://github.com/zaluru/ostree-workstation-playbook">ostree-workstation-playbook</a>
         </li>
     </ul>
-    <WorkInProgress />
+    <h1><a href="https://github.com/zaluru/zaluru.com">zaluru.com</a></h1>
+    <p>Built with <a href="astro.build">Astro</a>, a very versatile web framework, resulting in a tiny and fast website.
+        The site is rendered on the server and any unused javascript is removed.
+        Pages are built with components, so they can be reused anywhere without conflicting with
+        the rest of the site thanks to their separation from each other.</p>
 </BaseLayout>
 <style>
     h1 {
@@ -31,6 +36,9 @@ const pageTitle = "Projects"
 
     h2 {
         @apply text-lg font-bold my-5
+    }
+    p {
+        @apply mb-5
     }
     a {
         @apply underline hover:no-underline
