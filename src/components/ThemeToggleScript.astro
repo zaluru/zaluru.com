@@ -1,0 +1,21 @@
+<script client:load>
+  const html = document.querySelector("html");
+  function themeToggle() {        
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark')
+    } else {
+      html.classList.remove('dark')
+    }
+  }
+  
+  function themeTogglePress() {
+    if (localStorage.theme === 'dark') {
+      localStorage.theme = 'light'
+    } else {
+      localStorage.theme = 'dark'
+    }
+    themeToggle()
+  }
+
+  themeToggle()
+</script>
