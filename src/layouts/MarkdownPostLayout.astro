@@ -1,33 +1,77 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
+import NavigationBar from '../components/NavigationBar.astro';
+import Footer from '../components/Footer.astro';
+import "@fontsource/jetbrains-mono"
+import PostFooter from "../components/PostFooter.astro";
+import Head from '../components/Head.astro';
 const { frontmatter } = Astro.props;
 ---
-<BaseLayout>
-    <main class="flex-1 parsedown">        
-        <h1>{frontmatter.title}</h1>
-        <p>Written by {frontmatter.author}</p>
-        <p>Published on: {frontmatter.pubDate.slice(0,10)}</p>
-        <slot />
-    </main>
-</BaseLayout>
+<html lang="en">
+    <Head>
+        <title>{frontmatter.title}</title>
+    </Head>
+    <body class="flex flex-col min-h-screen
+             bg-stone-200 dark:bg-stone-900 
+             text-stone-900 dark:text-stone-200 ">
+
+        <NavigationBar />
+        <section class="py-5 max-w-6xl mx-auto w-full px-4">
+            <header class="flex-1 parsedown">        
+                <h1>{frontmatter.title}</h1>
+                <p>Written by {frontmatter.author}</p>
+                <p>Published on: {frontmatter.pubDate.slice(0,10)}</p>
+            </header>
+            <article>            
+                <slot />
+            </article>
+        </section>
+        <Footer>
+            <PostFooter />
+        </Footer>
+    </body>
+</html>
 <style is:global>
-    .parsedown h1 {
-        @apply text-4xl font-bold pt-12 pb-4 before:content-['*_'] 
+    article h1 {
+        @apply text-4xl font-bold pt-16 pb-4 before:content-['*_'] 
     }
     
-    .parsedown h2 {
-        @apply text-3xl font-bold pt-12 pb-4 before:content-['*_']
+    article h2 {
+        @apply text-3xl font-bold pt-14 pb-4 before:content-['*_']
     }
 
-    .parsedown h3 {
+    article h3 {
         @apply text-2xl font-bold pt-12 pb-4 before:content-['*_']
     }
     
-    .parsedown h4 {
-        @apply text-xl font-bold pt-12 pb-4 before:content-['*_']
+    article h4 {
+        @apply text-xl font-bold pt-10 pb-4 before:content-['*_']
     }
     
-    .parsedown h5 {
-        @apply text-lg font-bold pt-12 pb-4 before:content-['*_']
+    article h5 {
+        @apply text-lg font-bold pt-8 pb-4 before:content-['*_']
+    }
+    
+    article p {
+        @apply mb-4    
+    }
+    article table {
+        @apply mb-4 border-t bg-stone-300 dark:bg-stone-800  border-stone-900 dark:border-stone-200
+    }
+    
+    article table thead {
+        @apply font-bold
+    }
+
+    article table tbody tr {
+        @apply border-b border-stone-900 dark:border-stone-200
+    }
+    article table tbody tr td {
+        @apply px-6 py-4
+    }
+    article .astro-code {
+        @apply p-3 mb-4
     }
 </style>
+
+
+

@@ -2,49 +2,26 @@
 import NavigationBar from '../components/NavigationBar.astro';
 import Footer from '../components/Footer.astro';
 import "@fontsource/jetbrains-mono"
+import Head from '../components/Head.astro';
 
 //import '../styles/global.css';
 const { pageTitle } = Astro.props;
 ---
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+  <Head>
     <title>{pageTitle}</title>
-    <script client:load>
-      const html = document.querySelector("html");
-      function themeToggle() {        
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          html.classList.add('dark')
-        } else {
-          html.classList.remove('dark')
-        }
-      }
-      
-      function themeTogglePress() {
-        if (localStorage.theme === 'dark') {
-          localStorage.theme = 'light'
-        } else {
-          localStorage.theme = 'dark'
-        }
-        themeToggle()
-      }
-
-      themeToggle()
-    </script>
-  </head>
+  </Head>
   <body class="flex flex-col min-h-screen
              bg-stone-200 dark:bg-stone-900 
              text-stone-900 dark:text-stone-200 ">
 
     <NavigationBar />
-    <!--<h1 class="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">{pageTitle}</h1>
-    -->
-    <article class="py-5 max-w-6xl mx-auto w-full px-4">
-      <slot />
-    </article>
+    <section>
+      <article class="py-5 max-w-6xl mx-auto w-full px-4">
+        <h1 class="text-2xl font-bold leading-7 sm:truncate sm:text-3xl sm:tracking-tight pb-4">{pageTitle}</h1>
+        <slot />
+      </article>
+    </section>
     <Footer />
   </body>
 </html>
