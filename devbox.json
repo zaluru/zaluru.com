@@ -1,5 +1,6 @@
 {
   "packages": [
-    "nodejs@20.5.1"
+    "nodejs@20.6.1",
+    "nodePackages.pnpm@8.6.12"
   ]
 }
