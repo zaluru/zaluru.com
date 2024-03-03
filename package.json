@@ -11,13 +11,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^1.1.0",
-    "@astrojs/sitemap": "^3.0.0",
-    "@astrojs/svelte": "^4.0.2",
-    "@astrojs/tailwind": "^5.0.0",
+    "@astrojs/mdx": "^2.1.1",
+    "@astrojs/sitemap": "^3.1.1",
+    "@astrojs/tailwind": "^5.1.0",
     "@fontsource/jetbrains-mono": "^4.5.12",
-    "astro": "^3.1.0",
-    "svelte": "^3.53.1",
+    "astro": "^4.4.9",
     "tailwindcss": "^3.2.4"
   }
 }
